@@ -1,0 +1,46 @@
+<%- include('partials/header') %>
+
+<div class="container mt-5">
+  <h1><%= question.title %></h1>
+  <p><%= question.question %></p>
+</div>
+
+<div class="container">
+  <h4 class="mb-4">Respostas</h4>
+  <% answers.forEach(item => { %>
+  <div class="card mb-3" data-bs-theme="light">
+    <div class="card-body"><%= item.reply %></div>
+  </div>
+  <% }); %>
+</div>
+
+<div class="container mt-5">
+  <div class="card" data-bs-theme="light">
+    <div class="card-header">Responda a esta pergunta</div>
+    <div class="card-body">
+      <form
+        class="form-floating"
+        data-bs-theme="light"
+        action="/save-response"
+        method="post"
+      >
+        <div class="form-floating">
+          <textarea
+            class="form-control"
+            placeholder="Pergunta"
+            id="response"
+            style="height: 100px"
+            name="reply"
+            required
+          ></textarea>
+          <label for="response">Responder</label>
+        </div>
+        <input type="hidden" name="questionId" value="<%= question.id %>" />
+        <input type="hidden" name="slug" value="<%= question.slug %>" />
+        <button type="send" class="btn btn-outline-success mt-4">Enviar</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,22 @@
+<%- include('partials/header') %>
+
+<div class="container mt-5" style="margin-bottom: 100px">
+  <h1>Perguntas e Respostas</h1>
+  <h3>Faça aqui suas perguntas e assim que der vamos respondendo.</h3>
+  <a id="btn-perguntar" href="/perguntar" class="btn btn-primary btn-lg"
+    >Faça sua pergunta</a
+  >
+  <% questions.forEach(item => { %>
+  <div class="card mt-3" data-bs-theme="light">
+    <div class="card-body">
+      <h5 class="card-title"><%= item.title %></h5>
+      <hr />
+      <a class="btn btn-secondary btn-sm" href="/pergunta/<%= item.slug %>"
+        >Responder</a
+      >
+    </div>
+  </div>
+  <% }); %>
+</div>
+
+<%- include('partials/footer') %>

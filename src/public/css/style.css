@@ -1,0 +1,77 @@
+:root {
+  --bs-bg-color: #e2e2e2;
+  --bs-text-color: #242424;
+}
+
+body.light-theme {
+  background-color: var(--bs-bg-color);
+  color: var(--bs-text-color);
+}
+
+body.dark-theme {
+  --bs-bg-color: #242424;
+  --bs-text-color: #f1f1f1;
+
+  background-color: var(--bs-bg-color);
+  color: var(--bs-text-color);
+}
+
+#footer.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9000;
+}
+
+[data-bs-theme="dark"] {
+  color-scheme: dark;
+  .btn-outline-success {
+    --bs-btn-color: #b7ffdd;
+    --bs-btn-border-color: #b7ffdd;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #198754;
+    --bs-btn-hover-border-color: #198754;
+    --bs-btn-focus-shadow-rgb: 25, 135, 84;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #198754;
+    --bs-btn-active-border-color: #198754;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #198754;
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: #198754;
+    --bs-gradient: none;
+  }
+}
+
+#footer .info {
+  padding: 10px 20px;
+  background-color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+#btn-perguntar {
+  position: fixed;
+  bottom: 80px;
+  right: 0px;
+  z-index: 9999;
+  background-color: #005300;
+  border-color: green;
+  border-radius: 10px 0 0 10px;
+  border-right: none;
+}
+
+#btn-perguntar:hover {
+  background-color: #013d01;
+  border-color: green;
+}

@@ -1,0 +1,43 @@
+<%- include('partials/header') %>
+
+<div class="container mt-5">
+  <div class="card" data-bs-theme="light">
+    <div class="card-header">Faça sua pergunta</div>
+    <div class="card-body">
+      <form
+        class="form-floating"
+        data-bs-theme="light"
+        action="/save-question"
+        method="post"
+      >
+        <div class="form-floating mb-3">
+          <input
+            type="title"
+            name="title"
+            class="form-control"
+            id="titulo"
+            placeholder="Título da Pergunta"
+            required
+          />
+          <label for="titulo">Título da Pergunta</label>
+        </div>
+        <div class="form-floating">
+          <textarea
+            class="form-control"
+            placeholder="Pergunta"
+            id="question"
+            style="height: 100px"
+            name="question"
+            required
+          ></textarea>
+          <label for="question">Pergunta</label>
+        </div>
+        <button type="send" class="btn btn-outline-success mt-4">
+          Enviar uma Pergunta
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') %>
